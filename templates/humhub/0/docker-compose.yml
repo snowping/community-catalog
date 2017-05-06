@@ -12,7 +12,6 @@ services:
     labels:
       io.rancher.container.start_once: 'true'
     entrypoint: /bin/true
-    net: none
     volumes:
       - ${humhub_uploads}:/app/humhub/uploads
       - ${humhub_protected_runtime}:/app/humhub/protected/runtime
