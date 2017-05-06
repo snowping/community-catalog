@@ -1,0 +1,33 @@
+version: '2'
+services:
+  humhub:
+      tty: true
+      stdin_open: true
+      links:
+          - db
+      volumes_from:
+          - humhub-data
+  humhub-data:
+    image: busybox
+    labels:
+      io.rancher.container.start_once: 'true'
+    entrypoint: /bin/true
+    net: none
+    volumes:
+      - ${humhub_uploads}:/app/humhub/uploads
+      - ${humhub_protected_runtime}:/app/humhub/protected/runtime
+      - ${humhub_protected_config}:/app/humhub/protected/config
+      - ${humhub_protected_modules}:/app/humhub/protected/modules
+      - ${humhub_protected_themes}:/app/humhub/protected/themes
+    volume_driver: ${volume_driver}
+  db:
+      image: mariadb
+      tty: true
+      stdin_open: true
+      environment:
+          - MYSQL_ROOT_PASSWORD=${db_root_password}
+          - MYSQL_USER=${db_username}
+          - MYSQL_PASSWORD=${db_password}
+          - MYSQL_DATABASE=${db_name}
+      volumes:
+          - /var/lib/mysql

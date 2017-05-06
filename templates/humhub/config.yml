@@ -1,0 +1,8 @@
+name: HumHub
+description: |
+  HumHub - Open Source Social Network Kit
+version: 1.0.0
+category: Blogging
+maintainer: Snowping <snowping007@gmail.com>
+license: MIT
+projectURL: https://www.humhub.org

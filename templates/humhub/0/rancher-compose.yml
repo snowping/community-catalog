@@ -1,0 +1,65 @@
+.catalog:
+  name: HumHub
+  version: v1.2.0
+  description: HumHub - Open Source Social Network Kit
+  uuid: HumHub-0
+  minimum_rancher_version: v1.6.0
+  questions:
+    - variable: db_root_password
+      description: MySQL root password - keep this password complex and secure
+      label: MySQL Root Password
+      required: true
+      default: password
+      type: string
+    - variable: db_name
+      description: MySQL Database Name - to use in the HumHub setup
+      label: MySQL Database Name
+      required: true
+      default: humhub
+      type: string
+    - variable: db_username
+      description: MySQL Username - to use in the HumHub setup
+      label: MySQL Username
+      required: true
+      default: humhub
+      type: string
+    - variable: db_password
+      description: MySQL Password - to use in the HumHub setup
+      label: MySQL Password
+      required: true
+      default: password
+      type: string
+    - variable: humhub_uploads
+      description: HumHub Upload location on the host
+      label: HumHub Upload Location
+      required: true
+      default: HUMHUB_UPLOADS
+      type: string
+    - variable: humhub_protected_runtime
+      description: HumHub Runtime location on the host
+      label: HumHub Runtime Location
+      required: true
+      default: HUMHUB_PROTECTED_RUNTIME
+      type: string
+    - variable: humhub_protected_config
+      description: HumHub Config location on the host
+      label: HumHub Config Location
+      required: true
+      default: HUMHUB_PROTECTED_CONFIG
+      type: string
+    - variable: humhub_protected_modules
+      description: HumHub Modules location on the host
+      label: HumHub Modules Location
+      required: true
+      default: HUMHUB_PROTECTED_MODULES
+      type: string
+    - variable: humhub_protected_themes
+      description: HumHub Themes location on the host
+      label: HumHub Themes Location
+      required: true
+      default: HUMHUB_PROTECTED_THEMES
+      type: string
+    - variable: volume_driver
+      description: Volume Driver for the persistant data locations requires docker 1.7
+      label: Volume Driver (e.g. rancher-nfs)
+      type: string
