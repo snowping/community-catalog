@@ -6,20 +6,13 @@ services:
       stdin_open: true
       links:
           - db
-      volumes_from:
-          - humhub-data
-  humhub-data:
-    image: busybox
-    labels:
-      io.rancher.container.start_once: 'true'
-    entrypoint: /bin/true
-    volumes:
-      - ${humhub_uploads}:/app/humhub/uploads
-      - ${humhub_protected_runtime}:/app/humhub/protected/runtime
-      - ${humhub_protected_config}:/app/humhub/protected/config
-      - ${humhub_protected_modules}:/app/humhub/protected/modules
-      - ${humhub_protected_themes}:/app/humhub/protected/themes
-    volume_driver: ${volume_driver}
+      volumes:
+        - ${humhub_uploads}:/app/humhub/uploads
+        - ${humhub_protected_runtime}:/app/humhub/protected/runtime
+        - ${humhub_protected_config}:/app/humhub/protected/config
+        - ${humhub_protected_modules}:/app/humhub/protected/modules
+        - ${humhub_protected_themes}:/app/humhub/protected/themes
+      volume_driver: ${volume_driver}
   db:
       image: mariadb
       tty: true
