@@ -1,6 +1,7 @@
 version: '2'
 services:
   humhub:
+      image: snowping/humhub:1.2.0
       tty: true
       stdin_open: true
       links:
