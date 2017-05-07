@@ -39,10 +39,10 @@ services:
       tty: true
       stdin_open: true
       volumes:
-        - ${humhub_uploads}:/app/humhub/uploads
-        - ${humhub_protected_runtime}:/app/humhub/protected/runtime
-        - ${humhub_protected_config}:/app/humhub/protected/config
-        - ${humhub_protected_modules}:/app/humhub/protected/modules
-        - ${humhub_protected_themes}:/app/humhub/protected/themes
+        - ${humhub_uploads}:/home/${humhub_sftp_username}/uploads
+        - ${humhub_protected_runtime}:/home/${humhub_sftp_username}/protected/runtime
+        - ${humhub_protected_config}:/home/${humhub_sftp_username}/protected/config
+        - ${humhub_protected_modules}:/home/${humhub_sftp_username}/protected/modules
+        - ${humhub_protected_themes}:/home/${humhub_sftp_username}/protected/themes
       volume_driver: ${volume_driver}
       command: ${humhub_sftp_username}:${humhub_sftp_password}:100:101
