@@ -31,6 +31,18 @@ catalog:
       required: true
       default: password
       type: string
+    - variable: humhub_sftp_username
+      description: Sftp username - to access humhub data
+      label: Sftp Username
+      required: true
+      default: humhub
+      type: string
+    - variable: humhub_sftp_password
+      description: Sftp password - to access humhub data
+      label: Sftp Password
+      required: true
+      default: password
+      type: string
     - variable: humhub_uploads
       description: HumHub Upload location on the host
       label: HumHub Upload Location
