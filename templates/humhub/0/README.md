@@ -11,6 +11,7 @@ This catalog contains the following components:
   * HumHub Webapp - Linux Alpine with NGINX/PHP
   * HumHub DB - Mariadb
   * Phpmyadmin - Web Management GUI for Mariadb
+  * Sftp - Secure File Access for HumHub data
 
 ### Usage
  1. Fill in your desired db and storage configuration
