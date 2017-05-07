@@ -7,6 +7,11 @@ It's lightweight, powerful and comes with an user-friendly interface. With HumHu
 
 Boost your business, support your customers, teach your students or organize your football club. It's on you.
 
+This catalog contains the following components:
+  * HumHub Webapp - Linux Alpine with NGINX/PHP
+  * HumHub DB - Mariadb
+  * Phpmyadmin - Web Management GUI for Mariadb
+
 ### Usage
  1. Fill in your desired db and storage configuration
  2. Decide weather to use stack scoped storage like "rancher-nfs"

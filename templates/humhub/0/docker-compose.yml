@@ -24,3 +24,13 @@ services:
           - MYSQL_DATABASE=${db_name}
       volumes:
           - /var/lib/mysql
+  phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      tty: true
+      stdin_open: true
+      links:
+          - db:db
+      environment:
+          - MYSQL_ROOT_PASSWORD=${db_root_password}
+          - MYSQL_USER=${db_username}
+          - MYSQL_PASSWORD=${db_password}
