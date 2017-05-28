@@ -1,0 +1,25 @@
+version: '2'
+services:
+  keycloak:
+      image: jboss/keycloak-postgres:3.1.0.Final
+      tty: true
+      stdin_open: true
+      links:
+          - postgres:postgres
+      environment:
+          - POSTGRES_USER=${db_password}
+          - POSTGRES_PASSWORD=${db_username}
+          - POSTGRES_DATABASE=${db_name}
+          - KEYCLOAK_USER=${keycloak_username}
+          - KEYCLOAK_PASSWORD=${keycloak_password}
+  postgres:
+      image: postgres
+      tty: true
+      stdin_open: true
+      environment:
+          - POSTGRES_ROOT_PASSWORD=${db_root_password}
+          - POSTGRES_USER=${db_username}
+          - POSTGRES_PASSWORD=${db_password}
+          - POSTGRES_DB=${db_name}
+      volumes:
+          - /var/lib/postgresql/data

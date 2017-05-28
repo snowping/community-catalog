@@ -1,0 +1,8 @@
+name: Keycloak
+description: |
+  Keycloak - Open Source Identity and Access Management
+version: 1.0.0
+category: Security
+maintainer: Snowping <snowping007@gmail.com>
+license: MIT
+projectURL: http://www.keycloak.org/
