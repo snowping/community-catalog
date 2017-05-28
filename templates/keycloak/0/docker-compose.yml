@@ -9,7 +9,7 @@ services:
       environment:
           - POSTGRES_USER=${db_password}
           - POSTGRES_PASSWORD=${db_username}
-          - POSTGRES_DATABASE=${db_name}
+          - POSTGRES_DB=${db_name}
           - KEYCLOAK_USER=${keycloak_username}
           - KEYCLOAK_PASSWORD=${keycloak_password}
   postgres:
