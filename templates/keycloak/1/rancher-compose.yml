@@ -1,0 +1,45 @@
+version: '2'
+catalog:
+  name: Keycloak
+  version: v3.4.2.Final
+  description: Keycloak - Open Source Identity and Access Management
+  uuid: Keycloak-1
+  minimum_rancher_version: v1.6.0
+  upgrade_from: v1.2.0
+  questions:
+    - variable: db_root_password
+      description: PostgreSQL root password - keep this password complex and secure
+      label: PostgreSQL Root Password
+      required: true
+      default: password
+      type: string
+    - variable: db_name
+      description: PostgreSQL Database Name - to use as sql backend in Keycloak
+      label: PostgreSQL Database Name
+      required: true
+      default: keycloak
+      type: string
+    - variable: db_username
+      description: PostgreSQL Username - to use as sql backend in Keycloak
+      label: PostgreSQL Username
+      required: true
+      default: keycloak
+      type: string
+    - variable: db_password
+      description: PostgreSQL Password - to use as sql backend in Keycloak
+      label: PostgreSQL Password
+      required: true
+      default: password
+      type: string
+    - variable: keycloak_username
+      description: Keycloak admin - to access Keycloak admin UI
+      label: Keycloak Admin
+      required: true
+      default: keycloak
+      type: string
+    - variable: keycloak_password
+      description: Keycloak admin password - to access Keycloak admin UI
+      label: Keycloak Admin Password
+      required: true
+      default: keycloak
+      type: string
